@@ -20,7 +20,7 @@
       el.innerHTML =
         '<span class="brand-mark" aria-hidden="true">10x</span>' +
         '<span class="brand-name">' + esc(C.brandName) +
-        '<span class="brand-sub">WhatsApp Automation for दुकानदार</span></span>';
+        '<span class="brand-sub">WhatsApp API + Automation for Shops</span></span>';
     }
   });
 
