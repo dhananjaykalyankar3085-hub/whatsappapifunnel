@@ -24,7 +24,7 @@ window.FUNNEL_CONFIG = {
 
   // ₹9 Demo booking चा payment / order form link (GHL order form, Razorpay page इ.)
   // रिकामं ठेवलं तर बटण WhatsApp वर घेऊन जाईल.
-  demoPaymentUrl: "",
+  demoPaymentUrl: "https://rzp.io/rzp/CgsMquRq",
 
   // Free guide page वरचा video (YouTube embed URL), रिकामं = video box लपेल
   freeVideoEmbedUrl: "",

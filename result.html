@@ -248,9 +248,8 @@
   // Demo button
   var btn = document.getElementById("demo-btn");
   if (C.demoPaymentUrl) {
-    var url = C.demoPaymentUrl;
-    if (lead.full_name) url += (url.indexOf("?") > -1 ? "&" : "?") + new URLSearchParams({ name: lead.full_name, email: lead.email || "", phone: lead.phone || "" }).toString();
-    btn.href = url;
+    btn.href = C.demoPaymentUrl;
+    btn.target = "_blank"; btn.rel = "noopener";
   } else {
     btn.href = window.FUNNEL.waLink("नमस्कार, मला ₹9 Demo slot reserve करायचा आहे." + (lead.full_name ? " नाव: " + lead.full_name + ", Shop: " + lead.business_name + ", शहर: " + lead.city : ""));
     btn.target = "_blank"; btn.rel = "noopener";
