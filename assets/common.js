@@ -37,15 +37,6 @@
     a.target = "_blank"; a.rel = "noopener";
   });
 
-  // Founder photo
-  document.querySelectorAll("[data-founder-photo]").forEach(function (el) {
-    if (C.founderPhoto) {
-      el.outerHTML = '<img class="founder-photo" src="' + esc(C.founderPhoto) + '" alt="' + esc(C.founderName) + '">';
-    } else {
-      el.textContent = (C.founderName || "10x").charAt(0);
-    }
-  });
-
   // Testimonials — only real ones from config. Hidden when empty.
   document.querySelectorAll("[data-testimonials]").forEach(function (sec) {
     var list = C.testimonials || [];

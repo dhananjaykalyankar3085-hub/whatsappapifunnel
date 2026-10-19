@@ -191,13 +191,19 @@ p { margin: 0 0 1em; }
 @media (min-width: 820px) { .price-note { grid-template-columns: 1fr auto; } }
 .price-note .big { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.5rem, 4vw, 2rem); color: var(--brand); line-height: 1.15; margin: 0; }
 
-/* ---------- Founder ---------- */
-.founder { display: grid; gap: 22px; align-items: center; }
-@media (min-width: 760px) { .founder { grid-template-columns: 150px 1fr; } }
-.founder > * { min-width: 0; }
-.founder-photo { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent); background: #0E6A5F;
-  display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-size: 3rem; color: #fff; }
-.contact-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; align-items: center; }
+/* ---------- Company ---------- */
+.company { display: grid; gap: 26px; }
+.company-intro { display: grid; gap: 18px; align-items: start; }
+@media (min-width: 760px) { .company-intro { grid-template-columns: 84px 1fr; } }
+.company-intro > * { min-width: 0; }
+.company-mark { width: 84px; height: 84px; border-radius: 22px; background: var(--accent); color: var(--accent-ink);
+  display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; }
+.company-points { display: grid; gap: 1px; background: rgba(255,255,255,.14); border-radius: var(--r-lg); overflow: hidden; }
+@media (min-width: 760px) { .company-points { grid-template-columns: repeat(3, 1fr); } }
+.company-points > div { background: var(--brand); padding: 18px 20px; }
+.company-points b { display: block; color: #fff; font-family: var(--font-display); font-size: 1.12rem; }
+.company-points span { color: #C3E3DD; }
+.contact-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .phone-text { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: #fff; user-select: all; }
 
 /* ---------- Testimonials ---------- */

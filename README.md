@@ -20,7 +20,7 @@ Quiz मधली सगळी उत्तरं, Lead Score आणि HOT/WARM
 
 - `ghlWebhookUrl` — खालच्या step 3 मधून मिळेल
 - `demoPaymentUrl` — ₹9 चा GHL order form / Razorpay link (रिकामं असेल तर बटण WhatsApp उघडेल)
-- `logoUrl`, `founderPhoto` — `assets/` मध्ये फाईल टाकून path द्या
+- `logoUrl` — `assets/` मध्ये logo टाकून path द्या
 - `metaPixelId` — quiz submit वर **Lead**, ₹9 बटणावर **InitiateCheckout** event
 - `testimonials` — **फक्त खऱ्या clients चे**. रिकामा असेल तर section दिसत नाही.
 
@@ -135,7 +135,7 @@ Points बदलायचे असतील तर `quiz.html` मधल्य�
 
 ## Live करण्याआधी checklist
 
-- [ ] `config.js` मध्ये webhook URL, ₹9 payment link, logo, founder फोटो
+- [ ] `config.js` मध्ये webhook URL, ₹9 payment link, logo
 - [ ] FAQ "₹18,000 एकदाच की दरवर्षी?" चं खरं उत्तर `result.html` मध्ये लिहा
 - [ ] `deadlineText` मध्ये खरी तारीख
 - [ ] 3 test submissions (HOT / WARM / free) → GHL contact मध्ये fields + score दिसतायत का तपासा

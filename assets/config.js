@@ -14,9 +14,6 @@ window.FUNNEL_CONFIG = {
   // संपर्क
   phone: "8208412720",            // Call साठी
   whatsappNumber: "918208412720", // wa.me link साठी (91 + नंबर)
-  founderName: "धनंजय",
-  founderCity: "नांदेड",
-  founderPhoto: "",               // उदा. "assets/founder.jpg" (रिकामं = initials)
 
   // GHL Inbound Webhook URL (Automation → Workflow → Trigger: Inbound Webhook)
   // README मध्ये steps दिल्या आहेत.
