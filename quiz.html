@@ -68,6 +68,19 @@
   .phone-in input { border-radius: 0 var(--r-sm) var(--r-sm) 0; min-width: 0; }
   .privacy { font-size: .86rem; color: var(--muted); margin: 6px 0 14px; }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '312533886612641');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=312533886612641&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -317,9 +330,9 @@
     var u = utm(); Object.keys(u).forEach(function (k) { payload[k] = u[k]; });
     try { localStorage.setItem("wa_quiz_lead", JSON.stringify(payload)); } catch (err) {}
     var px = { content_name: "Diwali WhatsApp Check", lead_score: r.score, lead_category: r.category, business_type: payload.business_type };
-    window.FUNNEL.track("Lead", px);
+    window.fbq && window.fbq("track", "Lead", px);
     // QualifiedLead: only HOT / WARM leads. Optimise the Meta campaign on this event for better lead quality.
-    if (r.category === "HOT" || r.category === "WARM") window.FUNNEL.trackCustom("QualifiedLead", px);
+    if (r.category === "HOT" || r.category === "WARM") window.fbq && window.fbq("trackCustom", "QualifiedLead", px);
 
     var minWait = new Promise(function (res) { setTimeout(res, 700); }); // let the pixel send before the page changes
     Promise.all([send(payload), minWait]).then(function () {

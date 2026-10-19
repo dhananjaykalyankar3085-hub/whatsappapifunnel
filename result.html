@@ -29,6 +29,19 @@
   .demo-list { text-align: left; margin: 0 auto 16px; padding-left: 1.2em; max-width: 30em; color: var(--ink-2); }
   .demo-list li { margin-bottom: 4px; }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '312533886612641');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=312533886612641&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -254,7 +267,7 @@
     btn.href = window.FUNNEL.waLink("नमस्कार, मला ₹9 Demo slot reserve करायचा आहे." + (lead.full_name ? " नाव: " + lead.full_name + ", Shop: " + lead.business_name + ", शहर: " + lead.city : ""));
     btn.target = "_blank"; btn.rel = "noopener";
   }
-  btn.addEventListener("click", function () { window.FUNNEL.track("InitiateCheckout", { content_name: "₹9 Demo" }); });
+  btn.addEventListener("click", function () { window.fbq && window.fbq("track", "InitiateCheckout", { content_name: "₹9 Demo", value: 9, currency: "INR" }); });
 })();
 </script>
 </body>
