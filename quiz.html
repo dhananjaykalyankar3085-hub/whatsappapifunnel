@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>तुमचा दिवाळी WhatsApp Plan | 10xBizFunnel</title>
+<meta name="theme-color" content="#075E54">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  html, body { height: 100%; }
+  body { display: flex; flex-direction: column; }
+  .qhead { background: var(--teal-dark); color: #fff; }
+  .qhead .wrap { display: flex; align-items: center; gap: 12px; min-height: 62px; max-width: 760px; }
+  .qhead .back { color: #fff; text-decoration: none; font-size: 1.5rem; padding: 4px 6px; line-height: 1; }
+  .qhead .av { width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: var(--teal-dark);
+    display: grid; place-items: center; font-family: var(--font-head); font-weight: 800; font-size: .95rem; flex: none; }
+  .qhead b { display: block; font-family: var(--font-head); font-size: 1.1rem; line-height: 1.15; }
+  .qhead small { display: block; opacity: .85; font-size: .85rem; }
+  .bar { height: 4px; background: rgba(255,255,255,.18); }
+  .bar i { display: block; height: 100%; width: 0; background: var(--green); transition: width .35s ease; }
+
+  .thread { flex: 1; overflow-y: auto; }
+  .thread .wrap { max-width: 760px; padding-top: 16px; padding-bottom: 16px; }
+  .daychip { align-self: center; background: #E1F2FB; color: #3B4A54; font-size: .8rem; padding: 3px 12px; border-radius: 8px; margin-bottom: 6px; }
+  .bubble { animation: pop .18s ease-out; }
+  @keyframes pop { from { transform: translateY(6px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .typing { align-self: flex-start; background: #fff; border-radius: var(--r-bubble); border-top-left-radius: 4px;
+    padding: 12px 14px; box-shadow: var(--shadow-bubble); display: inline-flex; gap: 4px; }
+  .typing i { width: 7px; height: 7px; border-radius: 50%; background: #9AA6AC; animation: blink 1s infinite; }
+  .typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+  @keyframes blink { 0%, 80%, 100% { opacity: .3; } 40% { opacity: 1; } }
+  .bubble.price { border-left: 4px solid var(--diya); }
+
+  .dock { max-height: 72vh; overflow-y: auto; }
+  .dock { background: #F0F2F5; border-top: 1px solid var(--line); padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); }
+  .dock .wrap { max-width: 760px; }
+  .dock-label { font-size: .88rem; color: var(--muted); margin: 0 0 8px; }
+  .opts { display: grid; gap: 8px; }
+  @media (min-width: 560px) { .opts.two { grid-template-columns: 1fr 1fr; } }
+  .opt { text-align: left; font: inherit; font-size: 1.05rem; font-weight: 600; color: var(--teal-dark);
+    background: #fff; border: 1.5px solid #B7E8CA; border-radius: 14px; padding: 12px 14px; min-height: 52px; cursor: pointer;
+    display: flex; gap: 10px; align-items: center; }
+  .opt:hover { border-color: var(--green); background: #F4FCF7; }
+  .opt .e { font-size: 1.3rem; }
+  .undo { background: none; border: 0; color: var(--teal); font: inherit; font-size: .9rem; text-decoration: underline; cursor: pointer; padding: 6px 0 0; }
+
+  .form-grid { display: grid; gap: 10px; }
+  @media (min-width: 560px) { .form-grid { grid-template-columns: 1fr 1fr; } .form-grid .full { grid-column: 1 / -1; } }
+  .field label { display: block; font-size: .9rem; font-weight: 600; color: #33434C; margin-bottom: 3px; }
+  .field input { width: 100%; font: inherit; font-size: 1.05rem; padding: 11px 12px; border-radius: 12px; border: 1.5px solid var(--line); background: #fff; }
+  .field input:focus { border-color: var(--green); outline: none; box-shadow: 0 0 0 3px rgba(37,211,102,.2); }
+  .field .err { color: var(--danger); font-size: .85rem; min-height: 1em; display: block; }
+  .phone-in { display: flex; }
+  .phone-in span { padding: 11px 10px; border: 1.5px solid var(--line); border-right: 0; border-radius: 12px 0 0 12px; background: #F7F8FA; color: var(--muted); }
+  .phone-in input { border-radius: 0 12px 12px 0; }
+  .privacy { font-size: .82rem; color: var(--muted); margin: 6px 0 10px; }
+</style>
+</head>
+<body>
+
+<header class="qhead">
+  <div class="wrap">
+    <a class="back" href="index.html" aria-label="मागे जा">‹</a>
+    <span class="av" aria-hidden="true">10x</span>
+    <div>
+      <b>10xBizFunnel</b>
+      <small id="status">online</small>
+    </div>
+  </div>
+  <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+</header>
+
+<div class="thread" id="thread" aria-live="polite">
+  <div class="wrap chat" id="chat">
+    <span class="daychip">आज</span>
+  </div>
+</div>
+
+<div class="dock">
+  <div class="wrap" id="dock"></div>
+</div>
+
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script>
+(function () {
+  var C = window.FUNNEL_CONFIG || {};
+  var esc = window.FUNNEL.esc;
+
+  /* ------------------------------------------------------------------
+   * QUESTIONS — key = GHL custom field key. Option labels are stored
+   * in GHL exactly as written here (keep the GHL field options identical).
+   * pts = lead score points, tag = GHL tag added for that answer.
+   * ------------------------------------------------------------------ */
+  var Q = [
+    { key: "business_type", label: "Business Type",
+      ask: ["नमस्कार! 🙏 मी तुमच्या दुकानासाठी दिवाळी WhatsApp Plan तयार करतो.", "सुरुवात करूया. तुमचा व्यवसाय कुठला आहे?"],
+      two: true,
+      opts: [
+        { t: "ज्वेलर्स", e: "💍" }, { t: "साडी", e: "🥻" }, { t: "कपडे", e: "👕" },
+        { t: "इलेक्ट्रॉनिक्स", e: "📺" }, { t: "फर्निचर", e: "🛋️" }, { t: "होम अप्लायन्सेस", e: "🧺" },
+        { t: "इतर", e: "🏪" }
+      ] },
+    { key: "customer_database_size", label: "Customer Database Size",
+      ask: ["तुमच्याकडे किती ग्राहकांचे मोबाईल नंबर आहेत?"],
+      opts: [
+        { t: "500 पेक्षा कमी", pts: 0 }, { t: "500 ते 2,000", pts: 5 },
+        { t: "2,000 ते 10,000", pts: 10 }, { t: "10,000 पेक्षा जास्त", pts: 15 }
+      ] },
+    { key: "diwali_main_problem", label: "Diwali Main Problem",
+      ask: ["दिवाळीच्या गर्दीत सगळ्यात मोठी अडचण कुठली येते?"],
+      opts: [
+        { t: "चौकशीला वेळेवर reply देता येत नाही", e: "⏳" },
+        { t: "जुने ग्राहक परत येत नाहीत", e: "🔁" },
+        { t: "Staff ला सगळं manage होत नाही", e: "😓" },
+        { t: "Payment आणि follow-up राहून जातं", e: "💸" }
+      ] },
+    { key: "staff_size", label: "Staff Size",
+      ask: ["दुकानात तुमच्यासोबत किती staff आहे?"],
+      opts: [
+        { t: "मी एकटाच", pts: 0 }, { t: "1 ते 3", pts: 5 },
+        { t: "4 ते 10", pts: 10 }, { t: "10 पेक्षा जास्त किंवा शाखा आहेत", pts: 15 }
+      ] },
+    { key: "decision_maker", label: "Decision Maker",
+      ask: ["दुकानाच्या मार्केटिंगचा निर्णय कोण घेतं?"],
+      opts: [
+        { t: "मी स्वतः (मालक)", pts: 15 },
+        { t: "मी आणि भागीदार मिळून", pts: 10 },
+        { t: "मी staff आहे, निर्णय मालक घेतात", pts: 0, tag: "not-decision-maker" }
+      ] },
+    { key: "business_document", label: "Business Document",
+      ask: ["Official WhatsApp API साठी Meta व्यवसायाची पडताळणी करतं.", "तुमच्याकडे Udyam Aadhaar (MSME registration) आहे का?"],
+      opts: [
+        { t: "हो, Udyam Aadhaar आहे", pts: 15, tag: "udyam-yes" },
+        { t: "Udyam नाही, पण GST आहे", pts: 10, tag: "gst-only" },
+        { t: "दोन्ही नाही", pts: 0, tag: "no-documents" }
+      ] },
+    { key: "start_timeline", label: "Start Timeline",
+      ask: ["हे कधी सुरू करायचं आहे?"],
+      opts: [
+        { t: "दिवाळीपूर्वी, लगेच", pts: 15, tag: "before-diwali" },
+        { t: "दिवाळीनंतर 1-2 महिन्यांत", pts: 8 },
+        { t: "अजून ठरवलं नाही", pts: 2 }
+      ] },
+    { key: "budget_readiness", label: "Budget Readiness",
+      ask: ["एक गोष्ट आधीच स्पष्ट सांगतो 👇",
+            { price: true, html: "Official WhatsApp API setup <b>" + esc(C.priceBasic) + "</b> पासून सुरू होतो.<br>" + esc(C.demoPrice) + " ही फक्त 30 मिनिटांच्या Live Demo ची booking fee आहे, tool ची किंमत नाही." },
+            "हे लक्षात घेऊन, तुम्ही तयार आहात का?"],
+      opts: [
+        { t: "हो, योग्य वाटलं तर लगेच सुरू करायचं", pts: 20, tag: "budget-ready" },
+        { t: "आधी समजून घ्यायचं आहे", pts: 8 },
+        { t: "नाही, मला फक्त free माहिती हवी", pts: 0, tag: "free-only" }
+      ] }
+  ];
+
+  var reactions = {
+    business_type: function (a) { return a === "इतर" ? "ठीक आहे! कुठल्याही दुकानासाठी हे उपयोगी आहे. 👍" : "छान! " + a + " दुकानांसाठी दिवाळीत WhatsApp खूप कामाला येतो. 👍"; },
+    customer_database_size: function (a, o) { return o.pts >= 10 ? "वा! एवढे ग्राहक म्हणजे दिवाळीत मोठी संधी आहे. 🎯" : "ठीक आहे, नोंद केली."; },
+    diwali_main_problem: function () { return "हीच अडचण बहुतेक दुकानदारांची असते. याचं उत्तर तुमच्या Plan मध्ये दाखवतो."; }
+  };
+
+  var chat = document.getElementById("chat");
+  var dock = document.getElementById("dock");
+  var thread = document.getElementById("thread");
+  var bar = document.getElementById("bar");
+  var statusEl = document.getElementById("status");
+  var answers = {}; // key -> option object
+  var step = 0;
+  var busy = false;
+
+  function now() { var d = new Date(); return d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0"); }
+  function scroll() { thread.scrollTop = thread.scrollHeight; }
+  function bubble(html, side, cls) {
+    var b = document.createElement("div");
+    b.className = "bubble " + side + (cls ? " " + cls : "");
+    b.innerHTML = html + '<span class="time">' + now() + "</span>";
+    chat.appendChild(b); scroll(); return b;
+  }
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function botSay(list, done) {
+    var i = 0;
+    (function next() {
+      if (i >= list.length) { statusEl.textContent = "online"; return done && done(); }
+      var item = list[i++];
+      statusEl.textContent = "typing…";
+      var t = document.createElement("div"); t.className = "typing"; t.innerHTML = "<i></i><i></i><i></i>";
+      chat.appendChild(t); scroll();
+      setTimeout(function () {
+        t.remove();
+        if (typeof item === "string") bubble(esc(item), "in");
+        else bubble(item.html, "in", item.price ? "price" : "");
+        next();
+      }, reduce ? 0 : 550);
+    })();
+  }
+  function progress() {
+    var pct = Math.round((Math.min(step, Q.length) / (Q.length + 1)) * 100);
+    bar.style.width = pct + "%";
+  }
+
+  function showQuestion() {
+    progress();
+    var q = Q[step];
+    dock.innerHTML = "";
+    botSay(q.ask, function () { renderOptions(q); });
+  }
+
+  function renderOptions(q) {
+    var html = '<p class="dock-label">प्रश्न ' + (step + 1) + " / " + Q.length + " · एक उत्तर निवडा</p>" +
+      '<div class="opts' + (q.two ? " two" : "") + '">' +
+      q.opts.map(function (o, i) {
+        return '<button type="button" class="opt" data-i="' + i + '">' + (o.e ? '<span class="e">' + o.e + "</span>" : "") + esc(o.t) + "</button>";
+      }).join("") + "</div>" +
+      (step > 0 ? '<button type="button" class="undo" id="undo">मागचं उत्तर बदला</button>' : "");
+    dock.innerHTML = html;
+    busy = false;
+    dock.querySelectorAll(".opt").forEach(function (b) {
+      b.addEventListener("click", function () { choose(q, q.opts[+b.getAttribute("data-i")]); });
+    });
+    var u = document.getElementById("undo");
+    if (u) u.addEventListener("click", undo);
+    var first = dock.querySelector(".opt"); if (first && step > 0) first.focus({ preventScroll: true });
+  }
+
+  function choose(q, o) {
+    if (busy) return; busy = true;
+    answers[q.key] = o;
+    bubble((o.e ? o.e + " " : "") + esc(o.t), "out");
+    dock.innerHTML = "";
+    step++;
+    var r = reactions[q.key];
+    var after = function () { step < Q.length ? showQuestion() : askContact(); };
+    if (r) botSay([r(o.t, o)], after); else after();
+  }
+
+  function undo() {
+    if (step === 0) return;
+    step--;
+    delete answers[Q[step].key];
+    var outs = chat.querySelectorAll(".bubble.out");
+    var last = outs[outs.length - 1];
+    if (last) { last.style.opacity = ".45"; last.insertAdjacentHTML("beforeend", " <em style='font-size:.8rem'>(बदललं)</em>"); }
+    bubble("ठीक आहे, पुन्हा निवडा 👇", "in");
+    progress();
+    renderOptions(Q[step]);
+  }
+
+  /* ---------------- Contact step ---------------- */
+  function askContact() {
+    step = Q.length; progress();
+    botSay(["धन्यवाद! 🎉 तुमचा दिवाळी WhatsApp Plan तयार आहे.", "तो तुम्हाला WhatsApp वर पाठवण्यासाठी थोडी माहिती द्या 👇"], function () {
+      dock.innerHTML =
+        '<form id="cform" novalidate>' +
+        '<div class="form-grid">' +
+        fld("name", "तुमचं नाव", "text", "उदा. राहुल पाटील", "name") +
+        '<div class="field"><label for="phone">WhatsApp नंबर</label><div class="phone-in"><span>+91</span>' +
+          '<input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="10" placeholder="10 अंकी नंबर" required></div><span class="err" id="e-phone"></span></div>' +
+        fld("email", "Email", "email", "उदा. shop@gmail.com", "email") +
+        fld("business_name", "दुकानाचं नाव", "text", "उदा. पाटील ज्वेलर्स", "organization") +
+        fld("city", "शहर", "text", "उदा. नांदेड", "address-level2", true) +
+        "</div>" +
+        '<p class="privacy">🔒 तुमची माहिती फक्त तुमचा Plan पाठवण्यासाठी आणि demo साठी वापरली जाईल.</p>' +
+        '<button class="btn btn-block" type="submit" id="sbtn">माझा Plan पहा</button>' +
+        "</form>";
+      var f = document.getElementById("cform");
+      f.addEventListener("submit", submit);
+      document.getElementById("name").focus({ preventScroll: true });
+    });
+  }
+  function fld(id, label, type, ph, ac, full) {
+    return '<div class="field' + (full ? " full" : "") + '"><label for="' + id + '">' + label + '</label>' +
+      '<input id="' + id + '" name="' + id + '" type="' + type + '" placeholder="' + ph + '" autocomplete="' + ac + '" required>' +
+      '<span class="err" id="e-' + id + '"></span></div>';
+  }
+
+  function val(id) { return (document.getElementById(id).value || "").trim(); }
+  function setErr(id, msg) { document.getElementById("e-" + id).textContent = msg || ""; }
+
+  function validate() {
+    var ok = true;
+    ["name", "phone", "email", "business_name", "city"].forEach(function (k) { setErr(k, ""); });
+    if (val("name").length < 2) { setErr("name", "तुमचं नाव लिहा."); ok = false; }
+    var ph = val("phone").replace(/\D/g, "");
+    if (!/^[6-9]\d{9}$/.test(ph)) { setErr("phone", "10 अंकी मोबाईल नंबर लिहा (6, 7, 8 किंवा 9 ने सुरू होणारा)."); ok = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val("email"))) { setErr("email", "बरोबर email लिहा, उदा. name@gmail.com"); ok = false; }
+    if (val("business_name").length < 2) { setErr("business_name", "दुकानाचं नाव लिहा."); ok = false; }
+    if (val("city").length < 2) { setErr("city", "शहराचं नाव लिहा."); ok = false; }
+    return ok;
+  }
+
+  function score() {
+    var s = 0, tags = ["diwali-wa-quiz"];
+    Q.forEach(function (q) { var o = answers[q.key]; if (!o) return; s += o.pts || 0; if (o.tag) tags.push(o.tag); });
+    var freeOnly = tags.indexOf("free-only") > -1;
+    var noDocs = tags.indexOf("no-documents") > -1;
+    var cat = freeOnly ? "COLD" : s >= 70 ? "HOT" : s >= 40 ? "WARM" : "COLD";
+    tags.push(cat);
+    return { score: s, category: cat, tags: tags, freeOnly: freeOnly, noDocs: noDocs };
+  }
+
+  function utm() {
+    var p = new URLSearchParams(location.search), o = {};
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"].forEach(function (k) { if (p.get(k)) o[k] = p.get(k); });
+    return o;
+  }
+
+  function send(payload) {
+    if (!C.ghlWebhookUrl) { console.warn("ghlWebhookUrl config.js मध्ये नाही — lead GHL ला गेला नाही.", payload); return Promise.resolve(); }
+    var timeout = new Promise(function (r) { setTimeout(r, 4000); });
+    var req = fetch(C.ghlWebhookUrl, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload), keepalive: true
+    }).catch(function () {
+      // Fallback for CORS-blocked browsers: form-encoded "simple" request
+      var fd = new URLSearchParams();
+      Object.keys(payload).forEach(function (k) { fd.append(k, typeof payload[k] === "object" ? JSON.stringify(payload[k]) : payload[k]); });
+      return fetch(C.ghlWebhookUrl, { method: "POST", mode: "no-cors", body: fd, keepalive: true }).catch(function () {});
+    });
+    return Promise.race([req, timeout]);
+  }
+
+  function submit(e) {
+    e.preventDefault();
+    if (!validate()) { var bad = dock.querySelector(".err:not(:empty)"); if (bad) bad.previousElementSibling.focus(); return; }
+    var btn = document.getElementById("sbtn"); btn.disabled = true; btn.textContent = "Plan तयार करतोय…";
+    var r = score();
+    var full = val("name");
+    var payload = {
+      full_name: full,
+      first_name: full.split(/\s+/)[0],
+      last_name: full.split(/\s+/).slice(1).join(" "),
+      phone: "+91" + val("phone").replace(/\D/g, ""),
+      email: val("email"),
+      business_name: val("business_name"),
+      city: val("city"),
+      lead_score: r.score,
+      lead_category: r.category,
+      quiz_tags: r.tags.join(","),
+      route: (r.freeOnly || r.noDocs) ? "free-guide" : "result",
+      source: "whatsapp-diwali-quiz",
+      page_url: location.href,
+      submitted_at: new Date().toISOString()
+    };
+    Q.forEach(function (q) { payload[q.key] = answers[q.key] ? answers[q.key].t : ""; });
+    var u = utm(); Object.keys(u).forEach(function (k) { payload[k] = u[k]; });
+
+    try { localStorage.setItem("wa_quiz_lead", JSON.stringify(payload)); } catch (err) {}
+    window.FUNNEL.track("Lead", { content_name: "Diwali WhatsApp Quiz", value: r.score, status: r.category });
+
+    send(payload).then(function () {
+      var biz = encodeURIComponent(payload.business_type);
+      var name = encodeURIComponent(payload.first_name);
+      if (r.freeOnly || r.noDocs) {
+        location.href = "free.html?reason=" + (r.freeOnly ? "free" : "docs") + "&n=" + name;
+      } else {
+        location.href = "result.html?biz=" + biz + "&n=" + name + "&c=" + r.category;
+      }
+    });
+  }
+
+  /* ---------------- Start ---------------- */
+  var pre = new URLSearchParams(location.search).get("biz");
+  var preOpt = pre && Q[0].opts.filter(function (o) { return o.t === pre; })[0];
+  if (preOpt) {
+    botSay([Q[0].ask[0]], function () { choose(Q[0], preOpt); });
+  } else {
+    showQuestion();
+  }
+})();
+</script>
+</body>
+</html>
