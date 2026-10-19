@@ -27,7 +27,7 @@ window.FUNNEL_CONFIG = {
   freeVideoEmbedUrl: "",
 
   // Meta Pixel ID (रिकामं = pixel बंद). Quiz submit वर "Lead" event जातो.
-  metaPixelId: "",
+  metaPixelId: "312533886612641",
 
   // किंमत
   priceBasic: "₹18,000",

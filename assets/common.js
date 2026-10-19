@@ -62,5 +62,6 @@
   }
 
   window.FUNNEL = { C: C, esc: esc, waLink: waLink,
-    track: function (ev, data) { if (window.fbq) window.fbq("track", ev, data || {}); } };
+    track: function (ev, data) { if (window.fbq) window.fbq("track", ev, data || {}); },
+    trackCustom: function (ev, data) { if (window.fbq) window.fbq("trackCustom", ev, data || {}); } };
 })();

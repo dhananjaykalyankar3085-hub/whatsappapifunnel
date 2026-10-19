@@ -21,7 +21,9 @@ Quiz मधली सगळी उत्तरं, Lead Score आणि HOT/WARM
 - `ghlWebhookUrl` — खालच्या step 3 मधून मिळेल
 - `demoPaymentUrl` — ₹9 चा GHL order form / Razorpay link (रिकामं असेल तर बटण WhatsApp उघडेल)
 - `logoUrl` — `assets/` मध्ये logo टाकून path द्या
-- `metaPixelId` — quiz submit वर **Lead**, ₹9 बटणावर **InitiateCheckout** event
+- `metaPixelId` — सगळ्या pages वर **PageView**, quiz submit वर **Lead**, फक्त HOT/WARM leads साठी custom **QualifiedLead**, ₹9 बटणावर **InitiateCheckout**.
+  GHL funnel च्या tracking code मध्ये pixel पुन्हा टाकू नका (PageView दोनदा जाईल).
+  Campaign optimisation साठी Events Manager मध्ये `QualifiedLead` वरून **Custom Conversion** बनवा.
 - `testimonials` — **फक्त खऱ्या clients चे**. रिकामा असेल तर section दिसत नाही.
 
 ---

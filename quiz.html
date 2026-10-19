@@ -316,9 +316,13 @@
     Q.forEach(function (q) { payload[q.key] = answers[q.key] ? answers[q.key].t : ""; });
     var u = utm(); Object.keys(u).forEach(function (k) { payload[k] = u[k]; });
     try { localStorage.setItem("wa_quiz_lead", JSON.stringify(payload)); } catch (err) {}
-    window.FUNNEL.track("Lead", { content_name: "Diwali WhatsApp Check", value: r.score, status: r.category });
+    var px = { content_name: "Diwali WhatsApp Check", lead_score: r.score, lead_category: r.category, business_type: payload.business_type };
+    window.FUNNEL.track("Lead", px);
+    // QualifiedLead: only HOT / WARM leads. Optimise the Meta campaign on this event for better lead quality.
+    if (r.category === "HOT" || r.category === "WARM") window.FUNNEL.trackCustom("QualifiedLead", px);
 
-    send(payload).then(function () {
+    var minWait = new Promise(function (res) { setTimeout(res, 700); }); // let the pixel send before the page changes
+    Promise.all([send(payload), minWait]).then(function () {
       var n = encodeURIComponent(payload.first_name);
       if (r.freeOnly || r.noDocs) location.href = "free.html?reason=" + (r.freeOnly ? "free" : "docs") + "&n=" + n;
       else location.href = "result.html?biz=" + encodeURIComponent(payload.business_type) + "&n=" + n;
